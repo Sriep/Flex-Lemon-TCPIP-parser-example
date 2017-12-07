@@ -54,7 +54,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    QGuiApplication::setApplicationDisplayName(Client::tr("Fortune Client"));
+    QGuiApplication::setApplicationDisplayName(Client::tr("UtClient"));
     Client client;
     client.show();
     return app.exec();

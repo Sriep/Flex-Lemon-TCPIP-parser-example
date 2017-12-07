@@ -8,6 +8,3 @@ SOURCES       = client.cpp \
     commandlist.cpp \
     tcpconnect.cpp
 
-# install
-target.path = $$[QT_INSTALL_EXAMPLES]/network/fortuneclient
-INSTALLS += target

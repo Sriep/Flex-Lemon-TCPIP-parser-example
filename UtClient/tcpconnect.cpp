@@ -6,9 +6,11 @@
 #include "tcpconnect.h"
 #include <iostream>
 #include <QTextStream>
+#include "client.h"
 
-TcpConnect::TcpConnect(QObject *parent)
+TcpConnect::TcpConnect(Client *parent)
     : QObject(parent)
+    , client(parent)
     , logFile("qtconn.log")
     , tcpSocket(new QTcpSocket(this))
     , networkSession(Q_NULLPTR)
@@ -71,17 +73,7 @@ void TcpConnect::messageSent(qint64)
 void TcpConnect::readResponse()
 {
     logMessage("readyRead signal recieved");
-    //in.startTransaction();
     QString nextResponse = tcpSocket->readAll();
-
-    //QString nextResponse;
-    //in >> nextResponse;
-
-    //if (!in.commitTransaction())
-    //{
-    //    logMessage("Message recieved " + nextResponse + " Message not finishsed yet");
-    //    return;
-    //}
 
     lastResponse = nextResponse;
     emit responseRead();
@@ -90,8 +82,8 @@ void TcpConnect::readResponse()
 }
 
 void TcpConnect::displayError(QAbstractSocket::SocketError)
-{
-    qDebug() << "error recieved" << tcpSocket->errorString();
+{   
+    client->setStatusMessage(tcpSocket->errorString());
     logMessage("Error: " + tcpSocket->errorString());
     tcpSocket->abort();
 }
@@ -111,5 +103,6 @@ void TcpConnect::logMessage(QString message)
     QFile file(logFile);
     file.open(QFile::Append);
     file.write(message.toUtf8());
+    qDebug()  << message;
 }
 

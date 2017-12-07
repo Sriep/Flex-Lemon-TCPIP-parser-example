@@ -187,7 +187,7 @@ void Client::sendCommand()
 void Client::readResonse()
 {
     lastResponse = tcpConnect->getLastResponse();
-    statusLabel->setText(lastResponse);
+    setStatusMessage(lastResponse);
 }
 
 void Client::enableSendButton()
@@ -197,6 +197,11 @@ void Client::enableSendButton()
                            && !yearLineEdit->text().isEmpty()
                            && !commandCombo->currentText().isEmpty());
 
+}
+
+void Client::setStatusMessage(const QString &status)
+{
+    statusLabel->setText(status);
 }
 
 

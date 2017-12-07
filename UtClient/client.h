@@ -71,6 +71,7 @@ class Client : public QDialog
 
 public:
     explicit Client(QWidget *parent = Q_NULLPTR);
+    void setStatusMessage(const QString& status);
 
 private slots:
     void sendCommand();

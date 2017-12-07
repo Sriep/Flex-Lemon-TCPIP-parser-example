@@ -13,11 +13,12 @@
 #include <QFile>
 
 class QNetworkSession;
+class Client;
 class TcpConnect : public QObject
 {
     Q_OBJECT
 public:
-    explicit TcpConnect(QObject *parent = nullptr);
+    explicit TcpConnect(Client *parent);
     void sendCommand(const QString &value);
 
     void setPort(const quint16 &value);
@@ -38,6 +39,7 @@ signals:
 private:
     void connectServer();
 
+    Client *client;
     QString logFile;
 
     QStringList commandList;
