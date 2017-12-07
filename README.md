@@ -1,6 +1,6 @@
 # Test-Qt-TCP-IP-Server
 
-A simple example to illustrate how to write a simple client-server protocol using Qt's TCP/IP  objects. 
+An example to illustrate how to write a simple client-server protocol using Qt's TCP/IP  objects. 
 
 It was devised as a way of unit testing TCP/IP connection. The server acting as a simulation of hardware that was not available for testing against.
 
