@@ -3,7 +3,7 @@
 #include <QString>
 #include <QVector>
 
-enum CommandGUI {
+enum Cmd {
     January = 0
     ,Febuary
     ,March
@@ -19,22 +19,20 @@ enum CommandGUI {
     ,NumOfCommands
 };
 
-const QString InvalidRequest = "Unknown Command";
-
 struct Command {
     static const QVector<Command>  list;
-    static CommandGUI strToCmd(const QString &commandStr);
+    static Cmd strToCmd(const QString &commandStr);
 
-    CommandGUI name;
-    const QString command;
-    const QString paraLength;
-    const QString response;
+    Cmd name;
+    QString command;
+    bool yearParam;
+    QString response;
     int responseParamLength;
     QString suffix;
 
-    Command(CommandGUI name
+    Command(Cmd name
             , const QString &command
-            , const int paraLength
+            , bool yearParam
             , const QString& response
             , int responseParamLength
             , const QString& suffix

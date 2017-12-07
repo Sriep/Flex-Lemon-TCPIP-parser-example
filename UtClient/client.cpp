@@ -171,18 +171,23 @@ void Client::sendCommand()
     tcpConnect->setIp(hostCombo->currentText());
     tcpConnect->setPort(portLineEdit->text().toInt());
 
-    //sendButton->setEnabled(false);
     QString command = commandCombo->currentText();
-    command += " ";
-    command += yearLineEdit->text();
-    tcpConnect->sendCommand(command);
+    Command cmd = Command::list[Command::strToCmd(command)];
+    if (Cmd::NumOfCommands != cmd.name)
+    {
+        if (cmd.yearParam)
+        {
+            command += " ";
+            command += yearLineEdit->text();
+        }
+        tcpConnect->sendCommand(command);
+    }
 }
 
 void Client::readResonse()
 {
     lastResponse = tcpConnect->getLastResponse();
     statusLabel->setText(lastResponse);
-   // sendButton->setEnabled(true);
 }
 
 void Client::enableSendButton()

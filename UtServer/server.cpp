@@ -213,21 +213,27 @@ void Server::displayError(QAbstractSocket::SocketError socketError)
 QString Server::getResponse(const QString& message)
 {
     QStringList msgList = message.split(" ", QString::SkipEmptyParts);
-    QString cmdString = msgList[0];
-    CommandGUI cmdName = Command::strToCmd(cmdString);
-    if (cmdName == NumOfCommands)
+    if (msgList.length() == 0)
         return "";
 
-    Command cmd = Command::list[cmdName];
-    int year = msgList[1].toInt();
+    QString cmdString = msgList[0];
+    Command cmd = Command::list[Command::strToCmd(cmdString)];
 
     QString response;
     response = cmd.response;
-    response += " " + QString::number(year) + " has ";
-    if (cmdName == CommandGUI::Febuary)
-        response += QString::number(daysInFebuary(year));
-    else
-        response += QString::number(daysMonth[cmdName]);
+    if (Cmd::NumOfCommands != cmd.name)
+    {
+        if (cmd.yearParam && msgList.length()>1)
+        {
+            int year = msgList[1].toInt();
+
+            response += " " + QString::number(year) + " has ";
+            if (cmd.name == Cmd::Febuary)
+                response += QString::number(daysInFebuary(year));
+            else
+                response += QString::number(daysMonth[cmd.name]);
+        }
+    }
     response += cmd.suffix;
     return response;
 }
