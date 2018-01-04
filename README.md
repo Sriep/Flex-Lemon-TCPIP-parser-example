@@ -43,9 +43,9 @@ Also the flex option
 %option prefix="yycom"
 ```
 and the lemon option 
-
+```c++
 %name ParseClient
-
+```
 prefix all the flex and lemon calls, which allow multiple flex-lemon parsers to be run on the same machine. You will probably want to use your own names. The 
 ```c++
 void ClientParse::parse(QByteArray commandLine) 
