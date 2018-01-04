@@ -24,7 +24,7 @@ Just copy the UtClient/parser directoy to your system and modify the flex, .l an
 
 [lentcomgrammer.y](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientcomgrammer.y) is the grammar parser. Again you will want to edit this to match the grammar you are working on.  You should probably download and build the [latest version of lemon](https://www.hwaci.com/sw/lemon/). Also read the [lemon manual](https://www.sqlite.org/src/doc/trunk/doc/lemon.html).
 
-I found the following webpages helpfull. [souptonuts](http://souptonuts.sourceforge.net/readme_lemon_tutorial.html), (https://github.com/theory/flex-lemon-example)[flex-lemon-example] and [Generating a High-Speed Parser],(https://www.codeproject.com/Articles/1056460/Generating-a-High-Speed-Parser-Part-Lemon).
+I found the following webpages helpfull. [souptonuts](http://souptonuts.sourceforge.net/readme_lemon_tutorial.html)(https://github.com/theory/flex-lemon-example)[flex-lemon-example] and [Generating a High-Speed Parser](https://www.codeproject.com/Articles/1056460/Generating-a-High-Speed-Parser-Part-Lemon).
 
 The [clientparses.h](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientparse.h) and [clieentparse.cpp](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientparse.cpp) files; the ClientPrase object wraps a flex lemon parser. 
 
