@@ -20,13 +20,13 @@ Just copy the UtClient/parser directoy to your system and modify the flex, .l an
 
 ## Files to copy.
 
-clientcomvocab.l: This is the flex tokenizer. You will want to edit this so that it recognises the tokens in the grammar you are parsing. You will also want to download the (http://gnuwin32.sourceforge.net/packages/flex.htm)[latest version of flex]. You should also check out the (https://westes.github.io/flex/manual/index.html#Top)[flex manual].
+[clientcomvocab.l](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientcomvocab.l): This is the flex tokenizer. You will want to edit this so that it recognises the tokens in the grammar you are parsing. You will also want to download the [latest version of flex](http://gnuwin32.sourceforge.net/packages/flex.htm). You should also check out the [flex manual](https://westes.github.io/flex/manual/index.html#Top).
 
-lentcomgrammer.y is the grammar parser. Again you will want to edit this to match the grammar you are working on.  You should probably download and build the (https://www.hwaci.com/sw/lemon/)[latest version of lemon]. Also read the (https://www.sqlite.org/src/doc/trunk/doc/lemon.html)[lemon manual].
+[lentcomgrammer.y](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientcomgrammer.y) is the grammar parser. Again you will want to edit this to match the grammar you are working on.  You should probably download and build the [latest version of lemon](https://www.hwaci.com/sw/lemon/). Also read the [lemon manual](https://www.sqlite.org/src/doc/trunk/doc/lemon.html).
 
-I found the following webpages helpfull. (http://souptonuts.sourceforge.net/readme_lemon_tutorial.html)[souptonuts], (https://github.com/theory/flex-lemon-example)[flex-lemon-example] and (https://www.codeproject.com/Articles/1056460/Generating-a-High-Speed-Parser-Part-Lemon)[Generating a High-Speed Parser,]
+I found the following webpages helpfull. [souptonuts](http://souptonuts.sourceforge.net/readme_lemon_tutorial.html), (https://github.com/theory/flex-lemon-example)[flex-lemon-example] and [Generating a High-Speed Parser],(https://www.codeproject.com/Articles/1056460/Generating-a-High-Speed-Parser-Part-Lemon).
 
-The clientparses.h and clieentparse.cpp files; the ClientPrase object wraps a flex lemon parser. 
+The [clientparses.h](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientparse.h) and [clieentparse.cpp](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientparse.cpp) files; the ClientPrase object wraps a flex lemon parser. 
 
 This contains callback functions used from flex and lemon. I have included 
 
