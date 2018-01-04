@@ -1,8 +1,5 @@
 #include <QDebug>
 #include <cstdlib>
-#include <iostream>
-#include <string>
-#include <iostream>
 #include <stdio.h>
 #include <fstream>
 
@@ -23,16 +20,19 @@ ClientParse::~ClientParse()
 void ClientParse::operator()(QByteArray commandLine)
 {
     commandText = QString(commandLine);
+
     // Set up the scanner
     yyscan_t scanner;
-
     yycomlex_init(&scanner);
+
+    // Pass this to flex to allow callbacks.
     yycomlex_init_extra( this, &scanner );
     YY_BUFFER_STATE bufferState = yycom_scan_string(commandLine.constData(), scanner);
 
     // Set up the parser
     void* shellParser = ParseClientAlloc(malloc);
 
+    // Set up tracing
     FILE* traceFile;
     traceFile = fopen("traceLemon.log", "w");
     QByteArray prefix("parser >> ");
@@ -40,7 +40,7 @@ void ClientParse::operator()(QByteArray commandLine)
         ParseClientTrace(traceFile, prefix.data());
     }
 
-
+    // Main parsing loop
     int lexCode;
     do {
         lexCode = yycomlex(flex_yytext, scanner);

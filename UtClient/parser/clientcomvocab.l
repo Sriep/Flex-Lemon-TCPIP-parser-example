@@ -15,10 +15,7 @@
 %option bison-bridge
 %option extra-type="ClientParse*"
 %%
- /* single character ops */
 
-
- /* keywords */
 "January"   { return JAN; }
 "Febuary"	{ return FEB; }
 "March"		{ return MAR; }
@@ -36,8 +33,8 @@
 
 [0-9]+	{ yylval = yytext; yyextra->setFlexDays(yytext); return NUM; }
 
-[ \t\r\n]				{ /*White space*/ }
-. { /*Skip nonsese*/ }
+[ \t\r\n]	{ /*White space*/ }
+.           { /*Skip nonsese*/ }
 
 %%
 
