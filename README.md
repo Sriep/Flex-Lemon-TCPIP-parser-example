@@ -29,33 +29,33 @@ I found the following webpages helpfull. [souptonuts](http://souptonuts.sourcefo
 The [clientparses.h](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientparse.h) and [clieentparse.cpp](https://github.com/Sriep/Flex-Lemon-TCPIP-parser/blob/master/UtClient/parser/clientparse.cpp) files; the ClientPrase object wraps a flex lemon parser. 
 
 This contains callback functions used from flex and lemon. I have included 
-
+```c++
 void ClientParse::setFlexDays(const char *value); 
-
+```
 a callback function from flex and 
-
+```c++
 void ClientParse::response(Cmd cmd, const char* yyear, const char* ydays); 
-
+```
 a callback function from lemon. You will want to add your own functions here.
 
 Also the flex option
-
+```c++
 %option prefix="yycom"
-
+```
 and the lemon option 
 
 %name ParseClient
 
 prefix all the flex and lemon calls, which allow multiple flex-lemon parsers to be run on the same machine. You will probably want to use your own names. The 
-
+```c++
 void ClientParse::parse(QByteArray commandLine) 
-
+```
 function will then need to be modified with these new names. A find and replace should work fine.
 
 ## Build flex and lemon files
 
 On windows, you can now generate the other files by running the following commands. Similar commands should work on bash, except the --wincompat option can probably be removed.
-
+```dos
 win_flex --wincompat clientcomvocab.l
 
 lemon clientcomgrammer.y -s
@@ -63,12 +63,12 @@ lemon clientcomgrammer.y -s
 powershell -Command "(gc clientcomgrammer.c) -replace 'clientcomgrammer.c', 'clientcomgrammer.cpp' | Out-File clientcomgrammer.cpp"
 
 del clientcomgrammer.c
-
+```
 the power shell command just replaces clentcomgrammer.c with clientcomgrammer.cpp everywhere. You will also need to add to the top of clientvocab.h
-
+```c++
 #include "clientparse.h"
 #define YYSTYPE const char
-
+```
 Again feel to rename anything to fit in with your setup.
 
 
