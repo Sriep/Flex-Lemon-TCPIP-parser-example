@@ -189,7 +189,7 @@ void Client::readResonse()
 {
     lastResponse = tcpConnect->getLastResponse();
     ClientParse parser;
-    parser(lastResponse.toLatin1());
+    parser.parse(lastResponse.toLatin1());
     QString statusMesg;
     statusMesg = "There are " + parser.getDays() + " in " + parser.getMonth();
     statusMesg = statusMesg + " " + parser.getYear();

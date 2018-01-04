@@ -28,14 +28,14 @@ public:
     ~ClientParse();
 
     /*!
-     * \brief operator ()
+     * \brief parse
      * Parses a string according to the grammer defined in the flex
      * and lemon grammer files.
      *
      * \param commandLine
-     * The QByteArray to be parsed.
+     * The line to be parsed.
      */
-    void operator()(QByteArray commandLine);
+    void parse(QByteArray commandLine);
 
     /*!
      * \brief getDays

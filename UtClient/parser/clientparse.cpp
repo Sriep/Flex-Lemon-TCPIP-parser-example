@@ -17,7 +17,7 @@ ClientParse::~ClientParse()
 {
 }
 
-void ClientParse::operator()(QByteArray commandLine)
+void ClientParse::parse(QByteArray commandLine)
 {
     commandText = QString(commandLine);
 
