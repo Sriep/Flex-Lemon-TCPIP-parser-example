@@ -1,0 +1,356 @@
+State 0:
+          start ::= * command
+          command ::= * JAN NUM HAS NUM DAYS
+          command ::= * FEB NUM HAS NUM DAYS
+          command ::= * MAR NUM HAS NUM DAYS
+          command ::= * APR NUM HAS NUM DAYS
+          command ::= * MAY NUM HAS NUM DAYS
+          command ::= * JUN NUM HAS NUM DAYS
+          command ::= * JUL NUM HAS NUM DAYS
+          command ::= * AUG NUM HAS NUM DAYS
+          command ::= * SEP NUM HAS NUM DAYS
+          command ::= * OCT NUM HAS NUM DAYS
+          command ::= * NOV NUM HAS NUM DAYS
+          command ::= * DEC NUM HAS NUM DAYS
+
+                           JAN shift  48
+                           FEB shift  44
+                           MAR shift  40
+                           APR shift  36
+                           MAY shift  32
+                           JUN shift  28
+                           JUL shift  24
+                           AUG shift  20
+                           SEP shift  16
+                           OCT shift  12
+                           NOV shift  8
+                           DEC shift  4
+                         start accept
+                       command shift  49
+
+State 1:
+          command ::= DEC NUM HAS NUM * DAYS
+
+                          DAYS shift  50
+
+State 2:
+          command ::= DEC NUM HAS * NUM DAYS
+
+                           NUM shift  1
+
+State 3:
+          command ::= DEC NUM * HAS NUM DAYS
+
+                           HAS shift  2
+
+State 4:
+          command ::= DEC * NUM HAS NUM DAYS
+
+                           NUM shift  3
+
+State 5:
+          command ::= NOV NUM HAS NUM * DAYS
+
+                          DAYS shift  51
+
+State 6:
+          command ::= NOV NUM HAS * NUM DAYS
+
+                           NUM shift  5
+
+State 7:
+          command ::= NOV NUM * HAS NUM DAYS
+
+                           HAS shift  6
+
+State 8:
+          command ::= NOV * NUM HAS NUM DAYS
+
+                           NUM shift  7
+
+State 9:
+          command ::= OCT NUM HAS NUM * DAYS
+
+                          DAYS shift  52
+
+State 10:
+          command ::= OCT NUM HAS * NUM DAYS
+
+                           NUM shift  9
+
+State 11:
+          command ::= OCT NUM * HAS NUM DAYS
+
+                           HAS shift  10
+
+State 12:
+          command ::= OCT * NUM HAS NUM DAYS
+
+                           NUM shift  11
+
+State 13:
+          command ::= SEP NUM HAS NUM * DAYS
+
+                          DAYS shift  53
+
+State 14:
+          command ::= SEP NUM HAS * NUM DAYS
+
+                           NUM shift  13
+
+State 15:
+          command ::= SEP NUM * HAS NUM DAYS
+
+                           HAS shift  14
+
+State 16:
+          command ::= SEP * NUM HAS NUM DAYS
+
+                           NUM shift  15
+
+State 17:
+          command ::= AUG NUM HAS NUM * DAYS
+
+                          DAYS shift  54
+
+State 18:
+          command ::= AUG NUM HAS * NUM DAYS
+
+                           NUM shift  17
+
+State 19:
+          command ::= AUG NUM * HAS NUM DAYS
+
+                           HAS shift  18
+
+State 20:
+          command ::= AUG * NUM HAS NUM DAYS
+
+                           NUM shift  19
+
+State 21:
+          command ::= JUL NUM HAS NUM * DAYS
+
+                          DAYS shift  55
+
+State 22:
+          command ::= JUL NUM HAS * NUM DAYS
+
+                           NUM shift  21
+
+State 23:
+          command ::= JUL NUM * HAS NUM DAYS
+
+                           HAS shift  22
+
+State 24:
+          command ::= JUL * NUM HAS NUM DAYS
+
+                           NUM shift  23
+
+State 25:
+          command ::= JUN NUM HAS NUM * DAYS
+
+                          DAYS shift  56
+
+State 26:
+          command ::= JUN NUM HAS * NUM DAYS
+
+                           NUM shift  25
+
+State 27:
+          command ::= JUN NUM * HAS NUM DAYS
+
+                           HAS shift  26
+
+State 28:
+          command ::= JUN * NUM HAS NUM DAYS
+
+                           NUM shift  27
+
+State 29:
+          command ::= MAY NUM HAS NUM * DAYS
+
+                          DAYS shift  57
+
+State 30:
+          command ::= MAY NUM HAS * NUM DAYS
+
+                           NUM shift  29
+
+State 31:
+          command ::= MAY NUM * HAS NUM DAYS
+
+                           HAS shift  30
+
+State 32:
+          command ::= MAY * NUM HAS NUM DAYS
+
+                           NUM shift  31
+
+State 33:
+          command ::= APR NUM HAS NUM * DAYS
+
+                          DAYS shift  58
+
+State 34:
+          command ::= APR NUM HAS * NUM DAYS
+
+                           NUM shift  33
+
+State 35:
+          command ::= APR NUM * HAS NUM DAYS
+
+                           HAS shift  34
+
+State 36:
+          command ::= APR * NUM HAS NUM DAYS
+
+                           NUM shift  35
+
+State 37:
+          command ::= MAR NUM HAS NUM * DAYS
+
+                          DAYS shift  59
+
+State 38:
+          command ::= MAR NUM HAS * NUM DAYS
+
+                           NUM shift  37
+
+State 39:
+          command ::= MAR NUM * HAS NUM DAYS
+
+                           HAS shift  38
+
+State 40:
+          command ::= MAR * NUM HAS NUM DAYS
+
+                           NUM shift  39
+
+State 41:
+          command ::= FEB NUM HAS NUM * DAYS
+
+                          DAYS shift  60
+
+State 42:
+          command ::= FEB NUM HAS * NUM DAYS
+
+                           NUM shift  41
+
+State 43:
+          command ::= FEB NUM * HAS NUM DAYS
+
+                           HAS shift  42
+
+State 44:
+          command ::= FEB * NUM HAS NUM DAYS
+
+                           NUM shift  43
+
+State 45:
+          command ::= JAN NUM HAS NUM * DAYS
+
+                          DAYS shift  61
+
+State 46:
+          command ::= JAN NUM HAS * NUM DAYS
+
+                           NUM shift  45
+
+State 47:
+          command ::= JAN NUM * HAS NUM DAYS
+
+                           HAS shift  46
+
+State 48:
+          command ::= JAN * NUM HAS NUM DAYS
+
+                           NUM shift  47
+
+State 49:
+      (0) start ::= command *
+
+                             $ reduce 0
+
+State 50:
+     (12) command ::= DEC NUM HAS NUM DAYS *
+
+                     {default} reduce 12
+
+State 51:
+     (11) command ::= NOV NUM HAS NUM DAYS *
+
+                     {default} reduce 11
+
+State 52:
+     (10) command ::= OCT NUM HAS NUM DAYS *
+
+                     {default} reduce 10
+
+State 53:
+      (9) command ::= SEP NUM HAS NUM DAYS *
+
+                     {default} reduce 9
+
+State 54:
+      (8) command ::= AUG NUM HAS NUM DAYS *
+
+                     {default} reduce 8
+
+State 55:
+      (7) command ::= JUL NUM HAS NUM DAYS *
+
+                     {default} reduce 7
+
+State 56:
+      (6) command ::= JUN NUM HAS NUM DAYS *
+
+                     {default} reduce 6
+
+State 57:
+      (5) command ::= MAY NUM HAS NUM DAYS *
+
+                     {default} reduce 5
+
+State 58:
+      (4) command ::= APR NUM HAS NUM DAYS *
+
+                     {default} reduce 4
+
+State 59:
+      (3) command ::= MAR NUM HAS NUM DAYS *
+
+                     {default} reduce 3
+
+State 60:
+      (2) command ::= FEB NUM HAS NUM DAYS *
+
+                     {default} reduce 2
+
+State 61:
+      (1) command ::= JAN NUM HAS NUM DAYS *
+
+                     {default} reduce 1
+
+----------------------------------------------------
+Symbols:
+    0: $:
+    1: JAN
+    2: NUM
+    3: HAS
+    4: DAYS
+    5: FEB
+    6: MAR
+    7: APR
+    8: MAY
+    9: JUN
+   10: JUL
+   11: AUG
+   12: SEP
+   13: OCT
+   14: NOV
+   15: DEC
+   16: error:
+   17: start: JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC
+   18: command: JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC

@@ -54,6 +54,7 @@
 #include "client.h"
 #include "commandlist.h"
 #include "tcpconnect.h"
+#include "parser/clientparse.h"
 
 //! [0]
 Client::Client(QWidget *parent)
@@ -187,6 +188,11 @@ void Client::sendCommand()
 void Client::readResonse()
 {
     lastResponse = tcpConnect->getLastResponse();
+    ClientParse parser;
+    parser(lastResponse.toLatin1());
+    QString statusMesg;
+    statusMesg = "There are " + parser.getDays() + " in " + parser.getMonth();
+    statusMesg = statusMesg + " " + parser.getYear();
     setStatusMessage(lastResponse);
 }
 

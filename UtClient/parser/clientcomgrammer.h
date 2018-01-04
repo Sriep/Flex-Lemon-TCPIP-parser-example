@@ -1,0 +1,15 @@
+#define JAN                             1
+#define NUM                             2
+#define HAS                             3
+#define DAYS                            4
+#define FEB                             5
+#define MAR                             6
+#define APR                             7
+#define MAY                             8
+#define JUN                             9
+#define JUL                            10
+#define AUG                            11
+#define SEP                            12
+#define OCT                            13
+#define NOV                            14
+#define DEC                            15
