@@ -16,6 +16,8 @@ Hopefully, others can take my code and adapt it for their own needs.
 
 The /UtClient/parser/ directory has an example of a flex lemon parser. It should be relatively simple to modify this for your own use. This has been developed on windows but should work on any OS that flex and lemon support.
 
+You can read more about the flex lemon parser on my [blog page](http://piersshepperson.co.uk/programming/2018/01/05/flex-lemon-parser-c-object/).
+
 Just copy the UtClient/parser directoy to your system and modify the flex, .l and lemon .y to fit your needs.
 
 ## Files to copy.
